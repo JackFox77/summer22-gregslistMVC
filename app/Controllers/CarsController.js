@@ -10,6 +10,7 @@ function _drawCars(){
   cars.forEach(c => template += c.Template)
   // console.log('drawing cars', template)
   document.getElementById('listings').innerHTML = template
+  document.getElementById('form').innerHTML= cars[0].FormTemplate
 }
 
 function test(){
@@ -56,5 +57,6 @@ export class CarsController{
   deleteCar(id){
     console.log('deleteing', id);
     carsService.deleteCar(id)
+    
   }
 }

@@ -1,35 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      href="https://bcw.blob.core.windows.net/public/img/9977764104160066"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/style/main.css" />
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <title>GregsList</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/style/main.css">
-  <link rel="stylesheet" href="assets/style/style.css">
-  <title>GregsList</title>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <span class="ms-2"><span class="text-primary fs-2 fw-bold">G</span>regsList</span>
-      </a>
-    </nav>
-    <button class="btn btn-primary" onclick="app.carsController.viewCars()">cars</button>
-    <button class="btn btn-primary" onclick="app.housesController.viewHouses()">houses</button>
-    <button class="btn btn-primary">jobs</button>
-  </header>
-  <main>
-    <div class="container-fluid">
-      <!-- SECTION listings -->
-      <section id="listings" class="row">
-        <!-- STUB car template -->
-        <!-- <div class="col-4 p-3">
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-dark navbar-expand bg-dark text-light no-select"
+      >
+        <a class="navbar-brand ms-3" href="#">
+          <span class="ms-2"
+            ><span class="text-primary fs-2 fw-bold">G</span>regsList</span
+          >
+        </a>
+      </nav>
+      <button class="btn btn-primary" onclick="app.carsController.viewCars()">
+        cars
+      </button>
+      <button
+        class="btn btn-primary"
+        onclick="app.housesController.viewHouses()"
+      >
+        houses
+      </button>
+      <button class="btn btn-primary">jobs</button>
+    </header>
+    <main>
+      <div class="container-fluid">
+        <!-- SECTION listings -->
+        <section id="listings" class="row">
+          <!-- STUB car template -->
+          <!-- <div class="col-4 p-3">
           <div class="bg-white elevation-2">
             <img class="img-fluid" src="https://thiscatdoesnotexist.com" alt="">
             <div class="p-2">
@@ -40,49 +57,143 @@
             </div>
           </div>
         </div> -->
-        <!-- ---- -->
-      </section>
-      <!-- SECTION form -->
-      <section id="form" class="row justify-content-center p-3">
-        <form class="col-10 bg-white p-3 elevation-2" onsubmit="app.carsController.createCar()">
-          <h3 class="text-primary">List Your Car</h3>
-          <div class="row">
-            <div class="col-4">
-              <label class="form-label" for="make">Make</label>
-              <input class="form-control" type="text" minlength="5" id="make" name="make">
+          <!-- ---- -->
+        </section>
+        <!-- SECTION form -->
+        <section id="form" class="row justify-content-center p-3">
+          <!-- <form
+            class="col-10 bg-white p-3 elevation-2"
+            onsubmit="app.carsController.createCar()"
+          >
+            <h3 class="text-primary">List Your Car</h3>
+            <div class="row">
+              <div class="col-4">
+                <label class="form-label" for="make">Make</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  minlength="5"
+                  id="make"
+                  name="make"
+                />
+              </div>
+              <div class="col-4">
+                <label class="form-label" for="model">Model</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  id="model"
+                  name="model"
+                />
+              </div>
+              <div class="col-4">
+                <label class="form-label" for="year">Year</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="year"
+                  name="year"
+                />
+              </div>
+              <label class="form-label" for="price">Price</label>
+              <input
+                class="form-control"
+                type="number"
+                min="1"
+                id="price"
+                name="price"
+              />
+              <label class="form-label" for="img">Image</label>
+              <input class="form-control" type="text" id="img" name="img" />
+              <label class="form-label" for="description">Description</label>
+              <textarea
+                class="w-100 form-control"
+                name="description"
+                id="description"
+                rows="5"
+              ></textarea>
+              <button
+                type="submit"
+                class="btn btn-primary w-100 p-2 mt-3 text-light"
+              >
+                Submit
+              </button>
             </div>
-            <div class="col-4">
-              <label class="form-label" for="model">Model</label>
-              <input class="form-control" type="text" id="model" name="model">
-            </div>
-            <div class="col-4">
-              <label class="form-label" for="year">Year</label>
-              <input class="form-control" type="number" id="year" name="year">
-            </div>
-            <label class="form-label" for="price">Price</label>
-            <input class="form-control" type="number" min="1" id="price" name="price">
-            <label class="form-label" for="img">Image</label>
-            <input class="form-control" type="text" id="img" name="img">
-            <label class="form-label" for="description">Description</label>
-            <textarea class="w-100 form-control" name="description" id="description" rows="5"></textarea>
-            <button type="submit" class="btn btn-primary w-100 p-2 mt-3 text-light">Submit</button>
-          </div>
-        </form>
-      </section>
-    </div>
-  </main>
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p><small>Made with 💖 by Codeworks</small></p>
-    </div>
-  </footer>
+          </form> -->
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
-    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
-  <script src="app/main.js" type="module"></script>
-</body>
+          <!-- <form
+            class="col-10 bg-white p-3 elevation-2"
+            onsubmit="app.housesController.createHouse()"
+          >
+            <h3 class="text-primary">List Your House</h3>
+            <div class="row">
+              <div class="col-4">
+                <label class="form-label" for="type">Type</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  minlength="5"
+                  id="type"
+                  name="type"
+                />
+              </div>
+              <div class="col-4">
+                <label class="form-label" for="area">Area</label>
+                <input class="form-control" type="text" id="area" name="area" />
+              </div>
+              <div class="col-4">
+                <label class="form-label" for="year">Year</label>
+                <input
+                  class="form-control"
+                  type="number"
+                  id="year"
+                  name="year"
+                />
+              </div>
+              <label class="form-label" for="price">Price</label>
+              <input
+                class="form-control"
+                type="number"
+                min="1"
+                id="price"
+                name="price"
+              />
+              <label class="form-label" for="img">Image</label>
+              <input class="form-control" type="text" id="img" name="img" />
+              <label class="form-label" for="description">Description</label>
+              <textarea
+                class="w-100 form-control"
+                name="description"
+                id="description"
+                rows="5"
+              ></textarea>
+              <button
+                type="submit"
+                class="btn btn-primary w-100 p-2 mt-3 text-light"
+              >
+                Submit
+              </button>
+            </div>
+          </form> -->
+        </section>
+      </div>
+    </main>
+    <footer class="bg-dark text-light">
+      <div class="text-center no-select">
+        <p><small>Made with 💖 by Codeworks</small></p>
+      </div>
+    </footer>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+      integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app/main.js" type="module"></script>
+  </body>
 </html>
